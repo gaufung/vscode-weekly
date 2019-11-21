@@ -80,12 +80,7 @@
 		"vscode-test": "^1.2.2"
 	},
 	"dependencies": {
-		"base64-ts": "^2.0.1",
-		"js-base64": "^2.5.1",
 		"marked-ts": "^1.0.0-beta.4",
 		"sync-request": "^6.1.0",
-		"ts-sync-request": "^1.4.1",
-		"typed-rest-client": "^1.5.0",
-		"utf8-encoding": "^0.1.2"
 	}
 }
