@@ -7,19 +7,59 @@
 		"vscode": "^1.40.0"
 	},
 	"categories": [
-		"Other"
+		"Other",
+		"Snippets"
+	],
+	"keywords": [
+		"blogs",
+		"ruanyf"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"onCommand:extension.weekly",
+		"onView:weeklyExplorer",
+		"onCommand:Weekly.ViewPost"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "weekly",
+					"title": "ruanyf's weekly",
+					"icon": "media/dep.svg"
+				}
+			]
+		},
+		"views": {
+			"weekly": [
+				{
+					"id": "weeklyExplorer",
+					"name": "Posts"
+				}
+			]
+		},
 		"commands": [
 			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
+				"command": "weeklyExplorer:refreshEntry",
+				"title": "Refresh",
+				"icon": {
+					"light": "resources/light/refresh.svg",
+					"dark": "resources/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "Weekly.ViewPost",
+				"title": "View Post"
 			}
-		]
+		],
+		"menus": {
+			"view/title": [
+				{
+					"command": "weeklyExplorer:refreshEntry",
+					"when": "view == weeklyExplorer "
+				}
+			]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
@@ -38,5 +78,14 @@
 		"typescript": "^3.6.4",
 		"tslint": "^5.20.0",
 		"vscode-test": "^1.2.2"
+	},
+	"dependencies": {
+		"base64-ts": "^2.0.1",
+		"js-base64": "^2.5.1",
+		"marked-ts": "^1.0.0-beta.4",
+		"sync-request": "^6.1.0",
+		"ts-sync-request": "^1.4.1",
+		"typed-rest-client": "^1.5.0",
+		"utf8-encoding": "^0.1.2"
 	}
 }
