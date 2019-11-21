@@ -1,8 +1,12 @@
 {
 	"name": "weekly",
-	"displayName": "Weekly",
-	"description": "ruanyf's weekly",
-	"version": "0.0.1",
+	"displayName": "Ruanyf's Weekly",
+	"description": "A VSC extension for ruanyf's weekly",
+	"version": "0.1.0",
+	"publisher": "gaufung",
+	"author": {
+		"name": "Feng Gao"
+	},
 	"engines": {
 		"vscode": "^1.40.0"
 	},
@@ -14,6 +18,10 @@
 		"blogs",
 		"ruanyf"
 	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/gaufung/vscode-weekly.git"
+	},
 	"activationEvents": [
 		"onCommand:extension.weekly",
 		"onView:weeklyExplorer",
@@ -26,7 +34,7 @@
 				{
 					"id": "weekly",
 					"title": "ruanyf's weekly",
-					"icon": "media/dep.svg"
+					"icon": "media/dep.png"
 				}
 			]
 		},
@@ -41,11 +49,7 @@
 		"commands": [
 			{
 				"command": "weeklyExplorer:refreshEntry",
-				"title": "Refresh",
-				"icon": {
-					"light": "resources/light/refresh.svg",
-					"dark": "resources/dark/refresh.svg"
-				}
+				"title": "Refresh"
 			},
 			{
 				"command": "Weekly.ViewPost",
@@ -81,6 +85,6 @@
 	},
 	"dependencies": {
 		"marked-ts": "^1.0.0-beta.4",
-		"sync-request": "^6.1.0",
+		"sync-request": "^6.1.0"
 	}
 }
